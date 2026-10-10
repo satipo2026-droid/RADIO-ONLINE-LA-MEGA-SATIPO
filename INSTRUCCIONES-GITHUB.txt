@@ -1,0 +1,25 @@
+RADIO LA MEGA SATIPO — WEB TROPICAL CORREGIDA
+
+1. Abre: https://github.com/satipo2026-droid/RADIO-ONLINE-LA-MEGA-SATIPO
+2. Entra al repositorio y selecciona Add file > Upload files.
+3. IMPORTANTE: sube index.html, manifest.webmanifest y LA CARPETA assets COMPLETA a la RAÍZ del repositorio.
+   Para asegurar conservar la carpeta y rutas, puedes subir los archivos dentro de assets/ arrastrando la carpeta completa desde el Explorador.
+4. Confirma con Commit changes.
+5. Espera unos minutos y abre tu sitio:
+   https://satipo2026-droid.github.io/RADIO-ONLINE-LA-MEGA-SATIPO/
+6. Si sigue mostrando la versión anterior, presiona Ctrl + Shift + R en Chrome.
+
+NO subas el archivo ZIP sin descomprimir a la web; GitHub Pages necesita el index.html y la carpeta assets.
+NO coloques una carpeta adicional Radio-La-Mega-Satipo-WEB-CORREGIDA dentro del repositorio.
+
+Incluye:
+- Logo 3D y tus fotografías originales
+- Modelo promocional
+- Streaming: https://usa3.fastcast4u.com/proxy/mega20230/stream
+- Pedidos al WhatsApp: +51 929 533 006
+- Fecha y reloj para zona horaria America/Lima
+- Clima real usando Open-Meteo; requiere conexión
+- Efectos 3D y movimiento para equipos compatibles
+- Diseño adaptable a computadora y celular
+
+NOTA: Los textos de Programas y Noticias son secciones de la web, no datos de un panel de noticias. La señal y el clima dependen de sus proveedores externos.
