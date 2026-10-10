@@ -1,0 +1,27 @@
+RADIO LA MEGA SATIPO — APP PARA CELULAR (PWA)
+
+Esta es una aplicación web progresiva para Android y iPhone.
+Incluye el logo compartido, reproductor HTML5, control de volumen,
+programación, noticias, ranking, WhatsApp y accesos a redes sociales.
+
+IMPORTANTE: aún falta el enlace real HTTPS de audio de la emisora.
+Sin ese enlace NO podrá reproducir la radio en vivo. Las secciones de
+programación, noticias y ranking están listas para incorporar los datos reales.
+
+COMO PUBLICAR Y USAR EN CELULAR
+1. Subir TODOS los archivos y carpetas de este paquete a un hosting HTTPS.
+   No basta con abrir index.html desde el administrador de archivos.
+2. Abrir la URL publicada en el navegador del celular.
+3. Abrir Configuración (engranaje) y colocar la URL directa de audio HTTPS,
+   número WhatsApp y las direcciones de las redes sociales.
+4. Android: Chrome > menú ⋮ > Instalar aplicación o Añadir a pantalla de inicio.
+   iPhone: Safari > Compartir > Añadir a pantalla de inicio.
+5. Pulsar ▶ para escuchar. Se requiere conexión a Internet para la emisión.
+
+NOTAS
+- El streaming debe ser un audio reproducible por navegador (ej. MP3/AAC).
+- La configuración se guarda localmente en cada celular. Para distribuir la
+  app a todos los oyentes con la misma configuración, se debe poner el streaming
+  oficial en el código antes de la publicación.
+- Esto NO es un archivo APK y no está publicado en Google Play o App Store.
+  Para generar un APK firmado se requiere compilar y firmar un paquete Android.
