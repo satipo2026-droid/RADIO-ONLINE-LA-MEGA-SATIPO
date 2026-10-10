@@ -1,0 +1,14 @@
+RADIO LA MEGA SATIPO - NUEVA WEB SELVA CENTRAL
+
+1. Descomprime este ZIP en tu computadora.
+2. Abre GitHub: https://github.com/satipo2026-droid/RADIO-ONLINE-LA-MEGA-SATIPO
+3. En Code > Add file > Upload files, sube index.html, manifest.webmanifest, sw.js y la carpeta assets con todo su contenido. IMPORTANTE: mantén la estructura de carpetas. NO subas el ZIP sin descomprimir.
+4. Confirma con Commit changes y espera a que GitHub Pages se actualice.
+5. Abre https://satipo2026-droid.github.io/RADIO-ONLINE-LA-MEGA-SATIPO/
+6. Si ves la web antigua, recarga con Ctrl+F5 o borra los datos de sitio/caché.
+
+STREAM HTTPS: https://usa3.fastcast4u.com/proxy/mega20230/stream
+Clima: Open-Meteo para coordenadas aproximadas del centro de Satipo. Requiere internet; en caso de fallo muestra Sin datos.
+Hora y fecha: zona America/Lima del reloj del dispositivo.
+Foto, logo: archivos proporcionados por el propietario.
+El reproductor debe probarse en la página publicada, y algunos navegadores pueden suspender reproducción en segundo plano.
