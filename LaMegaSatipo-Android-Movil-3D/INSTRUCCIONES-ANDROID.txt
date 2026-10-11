@@ -1,0 +1,26 @@
+RADIO LA MEGA SATIPO — PROYECTO ANDROID STUDIO 2.1
+
+ESTE ARCHIVO NO ES UN APK. ES EL CÓDIGO FUENTE PARA ANDROID STUDIO.
+
+Qué incluye:
+- Misma temática de selva con las fotos proporcionadas, logo original y modelo promocional.
+- Efectos 3D CSS y movimientos sutiles en dispositivos compatibles.
+- Hora y fecha de Perú y clima actual de Satipo (Open-Meteo, requiere internet).
+- Botón de pedidos por WhatsApp: +51 929533006.
+- Reproductor de streaming FastCast4U.
+- WebViewAssetLoader con origen HTTPS local: permite consultar clima y cargar recursos locales sin problemas habituales de file://.
+- Enlaces externos salen de la app al navegador/WhatsApp.
+
+PARA ABRIR
+1. Extrae el ZIP.
+2. Android Studio > File > Open > selecciona la carpeta RadioLaMegaSatipo-AndroidStudio-Mejorado que contiene settings.gradle.kts.
+3. Espera a que Gradle sincronice. Debes ver el módulo app.
+4. Puedes editar app/src/main/assets/index.html (diseño y lógica web embebida).
+5. Las fotos y el logo están en app/src/main/assets.
+
+PRECAUCIONES
+- Proyecto no compilado ni probado en un celular desde este entorno.
+- La reproducción funciona mientras la aplicación está abierta; no incorpora aún un servicio de audio en segundo plano.
+- Los campos de noticias/programación son informativos, a la espera de datos reales de la emisora.
+- Usa la misma URL de stream previamente configurada; si cambia en FastCast4U, edita la constante STREAM_URL en index.html.
+- En caso de que Gradle solicite componentes Android SDK, instalarlos desde Android Studio.

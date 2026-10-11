@@ -1,0 +1,11 @@
+{
+  "name": "La Mega Satipo",
+  "short_name": "La Mega",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#090406",
+  "theme_color": "#180707",
+  "icons": [
+    {"src": "assets/logo.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
