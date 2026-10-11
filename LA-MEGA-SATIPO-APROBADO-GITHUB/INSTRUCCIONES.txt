@@ -1,0 +1,10 @@
+SUBIR A GITHUB PAGES
+
+1. Descomprime este ZIP.
+2. En tu repositorio de GitHub entra a: Add file > Upload files.
+3. Sube TODOS los archivos descomprimidos, no la carpeta ni el ZIP.
+4. Confirma que index.html quede en la raíz del repositorio.
+5. Haz clic en Commit changes.
+6. Espera 1 a 3 minutos y luego abre tu GitHub Pages.
+
+ESTA VERSIÓN USA EXACTAMENTE EL DISEÑO APROBADO POR EL CLIENTE.

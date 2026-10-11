@@ -1,0 +1,16 @@
+{
+  "name": "Radio La Mega Satipo",
+  "short_name": "La Mega Satipo",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#06110b",
+  "theme_color": "#08140c",
+  "icons": [
+    {
+      "src": "radio_la_mega_satipo_en_vivo_aprobado.png",
+      "sizes": "897x1600",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
