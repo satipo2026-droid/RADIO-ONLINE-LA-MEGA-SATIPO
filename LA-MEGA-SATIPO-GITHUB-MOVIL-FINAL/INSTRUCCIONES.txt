@@ -1,0 +1,12 @@
+PARA PUBLICAR EN GITHUB PAGES
+
+1. Descomprime este ZIP.
+2. En tu repositorio abre Add file > Upload files.
+3. Arrastra TODOS LOS ARCHIVOS SUELTOS de esta carpeta, no la carpeta principal ni el ZIP.
+4. Confirma que index.html y las imágenes estén en la raíz del repositorio.
+5. Pulsa Commit changes. Espera a que termine GitHub Pages y actualiza con Ctrl+F5.
+
+Incluye la versión para celulares Android como sitio web móvil, no como APK.
+La hora y fecha son dinámicas; el clima requiere internet y consulta Open-Meteo.
+El reproductor usa el streaming de FastCast4U indicado.
+WhatsApp: 929533006.
