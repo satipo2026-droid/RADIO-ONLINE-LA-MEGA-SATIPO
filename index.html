@@ -1,15 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#07111f">
+<meta name="description" content="Radio La Mega Satipo en vivo">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/icon-192.png">
 <title>Radio La Mega Satipo</title>
 <style>
-body{margin:0;background:#050912;display:flex;justify-content:center;min-height:100vh}
-img{max-width:460px;width:100%;height:auto;display:block}
+*{box-sizing:border-box}html,body{margin:0;background:#020814;font-family:Arial,Helvetica,sans-serif;color:#fff}body{display:flex;justify-content:center;min-height:100vh}.app{width:min(100%,470px);background:#040a14;min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.35)}.screen{position:relative;line-height:0}.screen img{display:block;width:100%;height:auto}.overlay{position:absolute;inset:0}.hud{position:absolute;background:rgba(7,17,31,.68);backdrop-filter:blur(6px);border:1px solid rgba(120,220,255,.18);border-radius:18px;padding:10px 12px;line-height:1.1;text-shadow:0 2px 6px rgba(0,0,0,.6)}.hud strong{display:block;font-size:clamp(18px,5vw,28px);font-weight:900}.hud small{display:block;font-size:clamp(8px,2.2vw,12px);margin-top:6px}.clock{left:3.8%;top:2.2%;width:42%;height:7.6%}.weather{right:4%;top:2.2%;width:31%;height:7.6%;text-align:right}
+.eq{position:absolute;left:31.2%;top:56.45%;width:58%;height:3.2%;display:flex;align-items:flex-end;gap:2px;pointer-events:none}.eq i{flex:1;min-width:2px;height:18%;border-radius:999px 999px 0 0;background:linear-gradient(to top,#39f7e2,#53b9ff 45%,#b77cff 78%,#f3b0ff 100%);box-shadow:0 0 8px rgba(115,200,255,.28);transition:height .08s linear;opacity:.96}
+.playHint{position:absolute;left:35%;top:58.5%;width:30%;text-align:center;padding:4px 8px;border-radius:999px;background:rgba(10,18,34,.78);border:1px solid rgba(131,216,255,.22);color:#dff6ff;font-weight:800;font-size:clamp(10px,2vw,14px);letter-spacing:.5px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.playBtn{position:absolute;left:40.5%;top:61.3%;width:19%;aspect-ratio:1;border-radius:50%;border:2px solid rgba(255,228,118,.95);cursor:pointer;background:radial-gradient(circle at 32% 28%,#ff7c97,#ff3b68 38%,#c50032 72%,#79001a 100%);box-shadow:0 0 0 6px rgba(255,55,98,.16),0 16px 28px rgba(0,0,0,.38),0 0 24px rgba(255,73,122,.5);display:grid;place-items:center;animation:pulsePlay 1.6s ease-in-out infinite}.playBtn:before{content:'▶';display:grid;place-items:center;width:100%;height:100%;font-size:clamp(28px,6vw,44px);font-weight:900;color:#fff;transform:translateX(6%)}.playing .playBtn{animation:none;background:radial-gradient(circle at 32% 28%,#54e8ff,#1cb9ff 38%,#0a7ac8 72%,#05406d 100%);box-shadow:0 0 0 6px rgba(46,191,255,.18),0 16px 28px rgba(0,0,0,.38),0 0 24px rgba(72,202,255,.55)}.playing .playBtn:before{content:'Ⅱ';transform:none}
+@keyframes pulsePlay{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.whatsapp{position:absolute;left:4%;top:69%;width:91%;height:7.6%;display:block}.menu{position:absolute;top:78.6%;height:7%;display:block}.m1{left:3.5%;width:22.5%}.m2{left:28.7%;width:22.5%}.m3{left:53.8%;width:22.5%}.m4{left:79%;width:17.5%}.nav{position:absolute;top:89.7%;height:7%;display:block}.n1{left:3%;width:20%}.n2{left:27%;width:20%}.n3{left:52%;width:23%}.n4{left:79%;width:15%}.hot{border-radius:18px}.hot:focus-visible{outline:2px solid #ffe869;outline-offset:2px}
+.panel{padding:14px 16px 24px;background:#06111f;color:#d9e7ff}.status{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 14px;background:#091829;border:1px solid rgba(255,255,255,.06);border-radius:14px}.status span{font-size:14px;line-height:1.4}.controls{margin-top:12px;display:grid;grid-template-columns:1fr auto auto;gap:10px;align-items:center}.volume{width:100%;accent-color:#43c9ff}.btn{border:0;border-radius:12px;padding:10px 14px;font-weight:800;background:#123154;color:#fff;cursor:pointer}.btn.live{background:#0fa958}.toast{position:fixed;top:14px;left:50%;transform:translateX(-50%);background:#11253f;border:1px solid rgba(255,255,255,.08);color:#fff;padding:10px 14px;border-radius:14px;display:none;z-index:30}.toast.show{display:block}a.hot,button.hot{background:transparent;border:0;cursor:pointer}
 </style>
 </head>
 <body>
-<img src="assets/diseño-final.png" alt="Radio La Mega Satipo">
-</body>
-</html>
+<div class="app">
+  <div class="screen" id="screen">
+    <img src="assets/diseno-final.png" alt="Diseño de Radio La Mega Satipo">
+    <div class="overlay">
+      <div class="hud clock"><strong id="hora">--:--</strong><small id="fecha">Cargando fecha…</small></div>
+      <div class="hud weather"><strong id="temp">Satipo --°C</strong><small id="clima">Consultando clima…</small></div>
+      <div class="eq" id="eq"></div>
+      <div class="playHint">TOCA AQUÍ · EN VIVO</div>
+      <button class="playBtn hot" id="playBtn" aria-label="Reproducir radio"></button>
+      <a class="whatsapp hot" href="https://wa.me/51929533006?text=Hola%20Radio%20La%20Mega%20Satipo%2C%20quiero%20hacer%20un%20pedido" target="_blank" rel="noopener" aria-label="Pedidos al WhatsApp"></a>
+      <button class="menu m1 hot" data-msg="Programas disponibles próximamente" aria-label="Programas"></button>
+      <button class="menu m2 hot" data-msg="Noticias disponibles próximamente" aria-label="Noticias"></button>
+      <a class="menu m3 hot" href="https://wa.me/51929533006" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+      <button class="menu m4 hot" data-msg="Agrega aquí tu enlace oficial de Facebook" aria-label="Facebook"></button>
+      <button class="nav n1 hot" data-msg="Ya estás en Inicio" aria-label="Inicio"></button>
+      <button class="nav n2 hot" id="goLive" aria-label="En Vivo"></button>
+      <button class="nav n3 hot" data-msg="Programación disponible próximamente" aria-label="Programación"></button>
+      <button class="nav n4 hot" data-msg="Más opciones disponibles próximamente" aria-label="Más"></button>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="status"><span id="estado">Toca el botón circular grande sobre el reproductor o el botón Reproducir para escuchar la radio en vivo.</span><button class="btn live" id="playText">Reproducir</button></div>
+    <div class="controls"><input class="volume" id="volume" type="range" min="0" max="100" value="85" aria-label="Volumen"><button class="btn" id="shareBtn">Compartir</button><button class="btn" id="stopBtn">Detener</button></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+<audio id="audio" preload="none" playsinline></audio>
+<script>
+const STREAM='https://usa3.fastcast4u.com/proxy/mega20230/stream';
+const PAGE_URL='https://satipo2026-droid.github.io/RADIO-ONLINE-LA-MEGA-SATIPO/';
+const audio=document.getElementById('audio'); audio.src=STREAM; audio.volume=.85;
+const screen=document.getElementById('screen'); const playBtn=document.getElementById('playBtn'); const playText=document.getElementById('playText'); const stopBtn=document.getElementById('stopBtn'); const volume=document.getElementById('volume'); const status=document.getElementById('estado');
+const eq=document.getElementById('eq'); const bars=[]; for(let i=0;i<34;i++){const b=document.createElement('i'); eq.appendChild(b); bars.push(b)}
+let anim=0, analyser=null, freq=null, probe=null, ctx=null;
+function setStatus(msg){status.textContent=msg}
+function toast(msg){const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(window._tt); window._tt=setTimeout(()=>t.classList.remove('show'),2500)}
+function renderEq(){if(audio.paused){cancelAnimationFrame(anim); return;} let real=false; if(analyser&&freq){analyser.getByteFrequencyData(freq); const avg=freq.reduce((a,b)=>a+b,0)/freq.length; if(avg>1) real=true;} const t=performance.now()/1000; bars.forEach((bar,i)=>{let v;if(real){const n=Math.min(freq.length-1,Math.floor(i/bars.length*freq.length*.8)); v=freq[n]/255;} else {v=.16+.34*Math.abs(Math.sin(t*(3.2+i%6*.18)+i*.72))+.18*Math.abs(Math.cos(t*2.2+i*.31));} bar.style.height=Math.max(15,Math.min(100,Math.round((.08+v*.92)*100)))+'%';}); anim=requestAnimationFrame(renderEq)}
+async function initAudioAnalysis(){if(probe||(!window.AudioContext&&!window.webkitAudioContext)) return; try{probe=new Audio(); probe.crossOrigin='anonymous'; probe.preload='none'; probe.src=STREAM; probe.volume=0; ctx=new (window.AudioContext||window.webkitAudioContext)(); const src=ctx.createMediaElementSource(probe); analyser=ctx.createAnalyser(); analyser.fftSize=256; analyser.smoothingTimeConstant=.76; freq=new Uint8Array(analyser.frequencyBinCount); const gain=ctx.createGain(); gain.gain.value=0; src.connect(analyser); analyser.connect(gain); gain.connect(ctx.destination); await ctx.resume(); await probe.play();}catch(e){analyser=null;freq=null; try{probe&&probe.pause()}catch(_){} probe=null;}}
+async function togglePlay(){if(!audio.paused){audio.pause(); return;} try{await audio.play(); setStatus('Conectado en vivo a Radio La Mega Satipo.'); screen.classList.add('playing'); playText.textContent='Pausar'; if(probe){probe.play().catch(()=>{}); ctx&&ctx.resume&&ctx.resume()} else initAudioAnalysis(); renderEq();}catch(e){setStatus('No se pudo conectar con la señal.'); toast('No se pudo reproducir la señal')}}
+playBtn.addEventListener('click',togglePlay); playText.addEventListener('click',togglePlay); document.getElementById('goLive').addEventListener('click',togglePlay); stopBtn.addEventListener('click',()=>audio.pause());
+audio.addEventListener('pause',()=>{screen.classList.remove('playing'); playText.textContent='Reproducir'; setStatus('Radio en pausa. Pulsa reproducir para continuar.'); if(probe) probe.pause(); cancelAnimationFrame(anim)});
+audio.addEventListener('playing',()=>{screen.classList.add('playing'); playText.textContent='Pausar'; renderEq()}); audio.addEventListener('error',()=>{screen.classList.remove('playing'); playText.textContent='Reproducir'; setStatus('La señal no está disponible en este momento.')});
+volume.addEventListener('input',e=>audio.volume=Number(e.target.value)/100);
+function updateClock(){const d=new Date(); document.getElementById('hora').textContent=new Intl.DateTimeFormat('es-PE',{timeZone:'America/Lima',hour:'2-digit',minute:'2-digit',hour12:false}).format(d); const f=new Intl.DateTimeFormat('es-PE',{timeZone:'America/Lima',weekday:'long',day:'numeric',month:'long',year:'numeric'}).format(d); document.getElementById('fecha').textContent=f.charAt(0).toUpperCase()+f.slice(1)} updateClock(); setInterval(updateClock,1000);
+const weatherMap={0:'Despejado',1:'Mayormente despejado',2:'Parcialmente nublado',3:'Nublado',45:'Neblina',48:'Neblina',51:'Llovizna',53:'Llovizna',55:'Llovizna fuerte',61:'Lluvia ligera',63:'Lluvia',65:'Lluvia fuerte',80:'Chubascos',81:'Chubascos',82:'Chubascos fuertes',95:'Tormenta',96:'Tormenta',99:'Tormenta'};
+async function updateWeather(){try{const r=await fetch('https://api.open-meteo.com/v1/forecast?latitude=-11.252&longitude=-74.637&current=temperature_2m,weather_code&timezone=America%2FLima',{cache:'no-store'}); if(!r.ok) throw new Error(); const j=await r.json(); document.getElementById('temp').textContent='Satipo '+Math.round(j.current.temperature_2m)+'°C'; document.getElementById('clima').textContent=weatherMap[j.current.weather_code]||'Condiciones variables'; }catch(e){document.getElementById('temp').textContent='Satipo'; document.getElementById('clima').textContent='Clima no disponible';}} updateWeather(); setInterval(updateWeather,20*60*1000);
+document.querySelectorAll('[data-msg]').forEach(el=>el.addEventListener('click',()=>toast(el.dataset.msg)));
+document.getElementById('shareBtn').addEventListener('click', async()=>{try{if(navigator.share) await navigator.share({title:'Radio La Mega Satipo',text:'Escucha Radio La Mega Satipo en vivo',url:PAGE_URL}); else if(navigator.clipboard && location.protocol.startsWith('http')){await navigator.clipboard.writeText(PAGE_URL); toast('Enlace copiado');} else toast(PAGE_URL);}catch(e){}});
+if('serviceWorker' in navigator && location.protocol.startsWith('http')){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));}
+</script>
+</body></html>
