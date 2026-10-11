@@ -1,0 +1,10 @@
+RADIO LA MEGA SATIPO - WEB COMPLETA CON EL DISEÑO APROBADO
+
+1. Extrae el ZIP en tu PC.
+2. Entra a https://github.com/satipo2026-droid/RADIO-ONLINE-LA-MEGA-SATIPO
+3. Add file > Upload files. Arrastra el archivo index.html, manifest.webmanifest y TODA la carpeta assets desde la carpeta extraída.
+4. Antes de publicar verifica que las rutas comiencen con assets/ y que index.html esté en la raíz.
+5. Pulsa Commit changes. Espera a que se publique y usa Ctrl+F5.
+6. Abre exactamente https://satipo2026-droid.github.io/RADIO-ONLINE-LA-MEGA-SATIPO/ (sin **).
+
+El diseño visual es el aprobado en la imagen. Se añadió un reproductor real superpuesto y zonas táctiles funcionales. Fecha y clima actuales. La canción ATC que aparece en la IMAGEN es ilustrativa (no es metadata real). Las noticias y programación son secciones de aviso, sin inventar información. Facebook queda pendiente de recibir el enlace oficial.
